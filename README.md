@@ -18,9 +18,9 @@ This is the first full public release including many features such as:
 * your camera viewer should now be fully operational.
 
 ### Side Note
-> This software is designed as a front end for cheap network cameras. For full operation with no modification it is advised that you use [MotionEye](https://github.com/ccrisan/motioneye). This code can easily be adapted however for operation with other cameras; see the guide on adapting this code [here](#)
+> This software is designed as a front end for cheap network cameras. For full operation with no modification it is advised that you use [MotionEye](https://github.com/ccrisan/motioneye). This code can easily be adapted however for operation with other cameras; see the guide on adapting this code [here](#).
 
 
 
 ### Attribution
-This code had been developed by Oliver Hynds and Robert Bradshaw - 08/10/2017
+This code had been developed by Oliver Hynds and Robert Bradshaw - 08/10/2017.
