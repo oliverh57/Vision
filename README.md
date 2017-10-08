@@ -6,10 +6,8 @@ Vision is a front end for many common network cameras that enables you to:
   - encrypt their stream
   - take snapshots and view them all from the webclient
 
-### New features in 1.0.1
-This is the first full public release including many features such as:
-  - Snapshot support
-  - more simple install
+### New features in 1.1.1
+Large Update to the way cameras are handled. The number of cameras can be dynamicly scaled in `\config\config.php`
  
 ### Installation instructions
 
@@ -22,6 +20,18 @@ This is the first full public release including many features such as:
 > This software is designed as a front end for cheap network cameras. For full operation with no modification it is advised that you use [MotionEye](https://github.com/ccrisan/motioneye). This code can easily be adapted however for operation with other cameras; see the guide on adapting this code [here](#)
 
 
+##change log
+
+###1.1.1
+Large Update to the way cameras are handled. The number of cameras can be dynamicly scaled.
+
+###1.0.2
+Bug fixes
+
+###1.0.1
+First Public release including many features such as:
+  - Snapshot support
+  - more simple install
 
 ### Attribution
 This code had been developed by Oliver Hynds and Robert Bradshaw - 08/10/2017
