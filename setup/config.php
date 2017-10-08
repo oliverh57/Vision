@@ -1,6 +1,6 @@
 <?php
 return array(
-    'auth' => 'hello',  #this is the authorisation code used for all internal authenticaion -> make it long!
+    'auth' => 'Your-random-string-here',  #this is the authorisation code used for all internal authenticaion -> make it long!
     'img_save_location' => '/var/cctv', #This sets where the snapshot images are stored.
 	
 	'username' => 'user', #This is the username used to log in.
