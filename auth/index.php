@@ -1,4 +1,4 @@
-<?php
+<?php $cam = 1;
 $config = include(dirname(__DIR__, 1)."/setup/config.php");
 if ( ( isset($_COOKIE['auth']) ) && ( $_COOKIE['auth'] == $config['auth'] )){
 echo <<<CAMERA
@@ -36,8 +36,8 @@ cursor:pointer;
 </style>
 
 	<script>
-			function savecam(cam, server) {
-			$.get("/php/save.php?action=1&cam=" + cam + "&auth=" + {$config['auth']} + "&server=" + server);
+		function savecam(cam, server) {
+			$.get("/php/save.php?action=1&cam=" + cam + "&auth=" + "{$config['auth']}" + "&server=" + server);
 			return false;
 		}
 
@@ -67,24 +67,54 @@ cursor:pointer;
 				<p>Secure image <span class="w3-tag">viewer</span></p>
 			</header>
 
+			
+
+			
+			<div class="w3-row">
+CAMERA;
+		
+		function cam_loop($cam, $config){
+		echo <<<CAMERA
+		<!-- view cam${cam} large -->
+			<div id="cam${cam}-stream" class="w3-modal">
+				<div class="w3-modal-content w3-card-4 w3-animate-bottom">
+					<header class="w3-container w3-theme-l1">
+						<span onclick="document.getElementById('cam${cam}-stream').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+						<h1>Images</h1>
+					</header>
+					<div class="w3-padding">
+								<img id="view_large${cam}" src="/images/loading.gif"  alt="Cam${cam}" style="width:100%">
+						<script>
+							setTimeout(load_large${cam}, 500);
+							function load_large${cam}()
+							{
+									document.getElementById('view_large${cam}').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "${config['auth']}" + "&port=" + "${config['cam'.$cam.'_port']}" + "&server=" + "${config['cam'.$cam.'_ip']}";
+							}
+						</script>
+					</div>
+					<footer class="w3-container w3-theme-l1">
+					</footer>
+				</div>
+			</div>
+			
 			<div id="loader" class="loading"></div>
 			<!-- view cam1 -->
-			<div id="cam1-view" class="w3-modal">
+			<div id="cam${cam}-view" class="w3-modal">
 				<div class="w3-modal-content w3-card-4 w3-animate-bottom">
 					<header class="w3-container w3-theme-l1">
-						<span onclick="document.getElementById('cam1-view').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+						<span onclick="document.getElementById('cam${cam}-view').style.display='none'" class="w3-button w3-display-topright">&times;</span>
 						<h1>Images</h1>
 					</header>
 					<div class="w3-padding">
 CAMERA;
 						
 							$save = $config['img_save_location'];
-							$dirname = "$save/cam1/";
+							$dirname = "$save/cam${cam}/";
 							$images = scandir($dirname);
 							$ignore = Array(".", "..");
 							foreach($images as $curimg){
 								if(!in_array($curimg, $ignore)) {
-									$location_scr= $save."/cam1/$curimg";
+									$location_scr= $save."/cam${cam}/$curimg";
 									$image = base64_encode(file_get_contents($location_scr));
 									echo "<img class='w3-third' style='padding:2px;' src='data:image/png;base64,$image'>";
 									//echo "<img class = 'w3-third' style = 'padding: 2px' src=$location_scr />\n";
@@ -98,211 +128,41 @@ echo <<<CAMERA
 				</div>
 			</div>
 			
-			<!-- view cam2 -->
-			<div id="cam2-view" class="w3-modal">
-				<div class="w3-modal-content w3-card-4 w3-animate-bottom">
-					<header class="w3-container w3-theme-l1">
-						<span onclick="document.getElementById('cam2-view').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-						<h1>Images</h1>
-					</header>
-					<div class="w3-padding">
-CAMERA;
-						
-							$save = $config['img_save_location'];
-							$dirname = "$save/cam2/";
-							$images = scandir($dirname);
-							$ignore = Array(".", "..");
-							foreach($images as $curimg){
-								if(!in_array($curimg, $ignore)) {
-									$location_scr= $save."/cam2/$curimg";
-									$image = base64_encode(file_get_contents($location_scr));
-									echo "<img class='w3-third' style='padding:2px;' src='data:image/png;base64,$image'>";
-									//echo "<img class = 'w3-third' style = 'padding: 2px' src=$location_scr />\n";
-								};
+				<!--cam${cam} -->
+				<div class="w3-third">
+					<div class="w3-card-4 w3-margin w3-white">
+							<img id="view${cam}" src="/images/loading.gif"  alt="Cam${cam}" style="width:100%">				<script>
+							setTimeout(load_${cam}, 500);
+							function load_${cam}()
+							{
+									document.getElementById('view${cam}').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "${config['auth']}" + "&port=" + "${config['cam'.$cam.'_port']}" + "&server=" + "${config['cam'.$cam.'_ip']}";
 							}
-echo <<<CAMERA
+						</script>
+						<div class="w3-container">
+							<h3><b>Camera ${cam}</b></h3>
+						</div>
+						<div class="w3-container">
+							<div class="w3-row">
+								<button class="w3-button w3-padding-large w3-white w3-border w3-third" style="display: inline;" onclick="document.getElementById('cam${cam}-stream').style.display='block'"><b>Full Size</b></button>
+								<button class="w3-button w3-padding-large w3-white w3-border w3-third" style="display: inline;" onclick="savecam('${cam}', '${config['cam'.$cam.'_ip']}');"><b>Snapshot</b></button>
+								<button style="display: inline;" class="w3-button w3-padding-large w3-white w3-border w3-third" onclick="document.getElementById('cam${cam}-view').style.display='block'"><b>View images</b></button>
+							</div>
+							<br>
+						</div>
 					</div>
-					<footer class="w3-container w3-theme-l1">
-						<p>images</p>
-					</footer>
+					<hr>
 				</div>
-			</div>
 			
-			<!-- view cam3 -->
-			<div id="cam3-view" class="w3-modal">
-				<div class="w3-modal-content w3-card-4 w3-animate-bottom">
-					<header class="w3-container w3-theme-l1">
-						<span onclick="document.getElementById('cam3-view').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-						<h1>Images</h1>
-					</header>
-					<div class="w3-padding">
 CAMERA;
-						
-							$save = $config['img_save_location'];
-							$dirname = "$save/cam3/";
-							$images = scandir($dirname);
-							$ignore = Array(".", "..");
-							foreach($images as $curimg){
-								if(!in_array($curimg, $ignore)) {
-									$location_scr= $save."/cam3/$curimg";
-									$image = base64_encode(file_get_contents($location_scr));
-									echo "<img class='w3-third' style='padding:2px;' src='data:image/png;base64,$image'>";
-									//echo "<img class = 'w3-third' style = 'padding: 2px' src=$location_scr />\n";
-								};
-							}
+			}
+			
+foreach (range(1,(int)$config['No_of_cams']) as $number) {
+   cam_loop($number, $config);
+}
+
 echo <<<CAMERA
-					</div>
-					<footer class="w3-container w3-theme-l1">
-						<p>images</p>
-					</footer>
-				</div>
-			</div>
-
-			<!-- view cam1 large -->
-			<div id="cam1-stream" class="w3-modal">
-				<div class="w3-modal-content w3-card-4 w3-animate-bottom">
-					<header class="w3-container w3-theme-l1">
-						<span onclick="document.getElementById('cam1-stream').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-						<h1>Images</h1>
-					</header>
-					<div class="w3-padding">
-						<img id="view1-l" src="/images/loading.gif" alt="Cam1" style="width:100%">
-						<script>
-							document.getElementById('view1-l').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "{$config['auth']}" + "&port=" + "{$config['cam1_port']}" + "&server=" + "{$config['cam1_ip']}";
-
-						</script>
-					</div>
-					<footer class="w3-container w3-theme-l1">
-					</footer>
-				</div>
-			</div>
-
-			<!-- view cam2 large -->
-			<div id="cam2-stream" class="w3-modal">
-				<div class="w3-modal-content w3-card-4 w3-animate-bottom">
-					<header class="w3-container w3-theme-l1">
-						<span onclick="document.getElementById('cam2-stream').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-						<h1>Images</h1>
-					</header>
-					<div class="w3-padding">
-						<img id="view2-l" src="/images/loading.gif" alt="Cam1" style="width:100%">
-						<script>
-							document.getElementById('view2-l').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "{$config['auth']}" + "&port=" + "{$config['cam2_port']}" + "&server=" + "{$config['cam2_ip']}";
-
-						</script>
-					</div>
-					<footer class="w3-container w3-theme-l1">
-					</footer>
-				</div>
-			</div>
-
-			<!-- view cam3 large -->
-			<div id="cam3-stream" class="w3-modal">
-				<div class="w3-modal-content w3-card-4 w3-animate-bottom">
-					<header class="w3-container w3-theme-l1">
-						<span onclick="document.getElementById('cam3-stream').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-						<h1>Images</h1>
-					</header>
-					<div class="w3-padding">
-						<img id="view3-l" src="/images/loading.gif" alt="Cam1" style="width:100%">
-						<script>
-							document.getElementById('view3-l').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "{$config['auth']}" + "&port=" + "{$config['cam3_port']}" + "&server=" +"{$config['cam3_ip']}";
-
-						</script>
-					</div>
-					<footer class="w3-container w3-theme-l1">
-					</footer>
-				</div>
-			</div>
-
-
-			<!-- cams -->
-			<div class="w3-row">
-
-				<!--cam1-->
-				<div class="w3-third">
-					<!-- Blog entry -->
-					<div class="w3-card-4 w3-margin w3-white">
-						<img id="view1" src="/images/loading.gif" alt="Cam1" style="width:100%">
-						<script>
-							setTimeout(load_1, 500);
-							function load_1()
-							{
-								document.getElementById('view1').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "{$config['auth']}" + "&port=" + "{$config['cam1_port']}" + "&server=" + "{$config['cam1_ip']}";
-							}
-						</script>
-						<div class="w3-container">
-							<h3><b>Camera 1</b></h3>
-						</div>
-						<div class="w3-container">
-							<div class="w3-row">
-								<button class="w3-button w3-padding-large w3-white w3-border w3-third" style="display: inline;" onclick="document.getElementById('cam1-stream').style.display='block'"><b>Full Size</b></button>
-								<button class="w3-button w3-padding-large w3-white w3-border w3-third" style="display: inline;" onclick="savecam(1, cam1_ip);"><b>Snapshot</b></button>
-								<button style="display: inline;" class="w3-button w3-padding-large w3-white w3-border w3-third" onclick="document.getElementById('cam1-view').style.display='block'"><b>View images</b></button>
-							</div>
-							<br>
-						</div>
-					</div>
-					<hr>
-
-				</div>
-
-				<div class="w3-third">
-
-					<div class="w3-card-4 w3-margin w3-white">
-						<img id="view2" src="/images//loading.gif" alt="Cam2" style="width:100%">
-						<script>
-							setTimeout(load_2, 500);
-							function load_2()
-							{
-							document.getElementById('view2').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "{$config['auth']}" + "&port=" + "{$config['cam2_port']}" + "&server=" + "{$config['cam2_ip']}";
-							}
-						</script>
-						<div class="w3-container">
-							<h3><b>Camera 2</b></h3>
-						</div>
-						<div class="w3-container">
-							<div class="w3-row">
-								<button class="w3-button w3-padding-large w3-white w3-border w3-third" style="display: inline;" onclick="document.getElementById('cam2-stream').style.display='block'"><b>Full Size</b></button>
-								<button class="w3-button w3-padding-large w3-white w3-border w3-third" style="display: inline;" onclick="savecam(2, cam2_ip);"><b>Snapshot</b></button>
-								<button style="display: inline;" class="w3-button w3-padding-large w3-white w3-border w3-third" onclick="document.getElementById('cam2-view').style.display='block'"><b>View images</b></button>
-							</div>
-							<br>
-						</div>
-					</div>
-					<hr>
-
-				</div>
-
-				<div class="w3-third">
-					<div class="w3-card-4 w3-margin w3-white">
-						<img id="view3" src="/images/loading.gif" alt="Cam3" style="width:100%">
-						<script>
-							setTimeout(load_3, 500);
-							function load_3()
-							{
-								document.getElementById('view3').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "{$config['auth']}" + "&port=" + "{$config['cam3_port']}" + "&server=" + "{$config['cam3_ip']}";
-							}
-						</script>
-						<div class="w3-container">
-							<h3><b>Camera 3</b></h3>
-						</div>
-						<div class="w3-container">
-							<div class="w3-row">
-								<button class="w3-button w3-padding-large w3-white w3-border w3-third" style="display: inline;" onclick="document.getElementById('cam3-stream').style.display='block'"><b>Full Size</b></button>
-								<button class="w3-button w3-padding-large w3-white w3-border w3-third" style="display: inline;" onclick="savecam(3, cam3_ip);"><b>Snapshot</b></button>
-								<button style="display: inline;" class="w3-button w3-padding-large w3-white w3-border w3-third" onclick="document.getElementById('cam3-view').style.display='block'"><b>View images</b></button>
-							</div>
-							<br>
-						</div>
-					</div>
-					<hr>
-
-				</div>
-
-				<!-- END GRID -->
-			</div><br>
-		</div>
+		
+		</div> </div>
 		<!-- Footer -->
 		<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
 			<p>Copyright Oliver Hynds</p>
@@ -312,7 +172,9 @@ echo <<<CAMERA
 
 </html>
 CAMERA;
+	
+
 } else {
-header("Location:". $config['auth']);
+header("Location:". $config['site_url']);
 };
 ?>
