@@ -6,11 +6,7 @@ return array(
 	'username' => 'user', #This is the username used to log in.
 	'password' => 'pass', #This is the password used to log in.
 	
-<<<<<<< HEAD
 	'site_url' => 'https://your.site.com', #location the site is running from
-=======
-	'site_url' => 'https://your.site.com', #The location of the site
->>>>>>> d77ad99811659adb2483de3358883d539be54e47
 	
 	#Configure your cameras here:
 	
