@@ -1,6 +1,6 @@
 <?php
 return array(
-    'auth' => '4!NXWoP^lDFa_x_a15Hq*X(&A8ze1HRi£1iE£F4hhOzoiRr%qW',  #this is the authorisation code used for all internal authenticaion -> make it long!
+    'auth' => 'hello',  #this is the authorisation code used for all internal authenticaion -> make it long!
     'img_save_location' => '/var/cctv', #This sets where the snapshot images are stored.
 	
 	'username' => 'user', #This is the username used to log in.
@@ -8,9 +8,11 @@ return array(
 	
 	'site_url' => 'https://your.site.com', #location the site is running from
 	
-	#Configure your cameras here:
+	#CAMERA SETUP
 	
-	'cam1_ip' => '192.168.1.185',
+	'No_of_cams' => '3', #Set the number of cameras you are using
+	
+	'cam1_ip' => '192.168.1.185', #configure each of your cameras here. If you have set your numer of cams to anything other than 3 copy paste the setup for each camera here.
 	'cam1_port' => '8081',
 	
 	'cam2_ip' => '192.168.1.185',
