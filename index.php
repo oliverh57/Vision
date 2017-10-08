@@ -41,12 +41,9 @@
 								<p style="font-size:0px;"> <br></p> <label for="password" style="display: inline-block; width: 6em;">Password: </label><input type="password" value="" id="password" name="password" style="max-width:100%;" /> <br><br>
 								<p>
 									<?php
-									$config = include("setup/config.php");
-									setcookie("auth", $config['auth'], time() + (86400 * 30), "/");
-									header("Location: /auth");
+									$config = include("setup/config.php");https://remotehound.ddns.net/auth/
                                         if (isset($_POST["username"]) && isset($_POST["password"])){
-                                            if ($_POST["username"] == "user" && $_POST["password"] == "pass"){
-												header("Location: /auth");
+                                            if ($_POST["username"] == $config['username'] && $_POST["password"] == $config['password']){
                                                 setcookie("auth", $config['auth'], time() + (86400 * 30), "/");
                                                 header("Location: /auth");
                                                 die();
