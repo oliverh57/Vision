@@ -13,7 +13,7 @@ This is the first full public release including many features such as:
  
 ### Installation instructions
 
-* Clone the repository to your web directory using the command ``$ sh git clone https://github.com/oliverh57/Vision.git``.
+* Clone the repository to your web directory using the command ``$ git clone https://github.com/oliverh57/Vision.git``.
 * Edit the file `\setup\config.php` with information about your cameras and decide on an encryption key and username / password.
 * your camera viewer should now be fully operational.
 
