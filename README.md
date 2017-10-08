@@ -20,15 +20,15 @@ Large Update to the way cameras are handled. The number of cameras can be dynami
 > This software is designed as a front end for cheap network cameras. For full operation with no modification it is advised that you use [MotionEye](https://github.com/ccrisan/motioneye). This code can easily be adapted however for operation with other cameras; see the guide on adapting this code [here](#)
 
 
-##change log
+## change log
 
-###1.1.1
+### 1.1.1
 Large Update to the way cameras are handled. The number of cameras can be dynamicly scaled.
 
-###1.0.2
+### 1.0.2
 Bug fixes
 
-###1.0.1
+### 1.0.1
 First Public release including many features such as:
   - Snapshot support
   - more simple install
