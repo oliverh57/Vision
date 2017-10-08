@@ -17,7 +17,7 @@ This is the first full public release including many features such as:
 * Edit the file `\setup\config.php` with information about your cameras and decide on an encryption key and username / password.
 * your camera viewer should now be fully operational.
 
-## Side Note
+### Side Note
 > This software is designed as a front end for cheap network cameras. For full operation with no modification it is advised that you use [MotionEye](https://github.com/ccrisan/motioneye). This code can easily be adapted however for operation with other cameras; see the guide on adapting this code [here](#)
 
 
