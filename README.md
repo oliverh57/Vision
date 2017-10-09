@@ -6,8 +6,9 @@ Vision is a front end for many common network cameras that enables you to:
   - encrypt their stream
   - take snapshots and view them all from the webclient
 
-### New features in 1.1.1
+### New features in 1.1.2
 Large Update to the way cameras are handled. The number of cameras can be dynamicly scaled in `\config\config.php`
+Optional ReCaptcha verification on login page
  
 ### Installation instructions
 
@@ -22,6 +23,9 @@ Large Update to the way cameras are handled. The number of cameras can be dynami
 
 ## change log
 
+### 1.1.2
+Add optional ReCaptcha verification to login page
+
 ### 1.1.1
 Large Update to the way cameras are handled. The number of cameras can be dynamicly scaled.
 
@@ -34,4 +38,4 @@ First Public release including many features such as:
   - more simple install
 
 ### Attribution
-This code had been developed by Oliver Hynds and Robert Bradshaw - 08/10/2017
+This code had been developed by Oliver Hynds, Robert Bradshaw and Ben Griffiths - 09/10/2017
