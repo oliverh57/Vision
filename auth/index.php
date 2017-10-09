@@ -165,7 +165,7 @@ echo <<<CAMERA
 		</div> </div>
 		<!-- Footer -->
 		<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-			<p>Copyright <b>Oliver Hynds</b>, <b>Robert Bradshaw</b>, <b>Ben Griffiths</b> and <a href="https://www.w3schools.com">W3Schools</a></p>
+			<p>Copyright <b>Oliver Hynds</b>, <b>Robert Bradshaw</b> and <b>Ben Griffiths</b></p>
 		</footer>
 
 	</body>
