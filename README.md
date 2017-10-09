@@ -7,7 +7,7 @@ Vision is a front end for many common network cameras that enables you to:
   - take snapshots and view them all from the webclient
 
 ### New features in 1.2.1
-Add optional ReCaptcha verification to login page
+Add optional ReCaptcha verification to login page as well as orgnisation.
  
 ### Installation instructions
 
