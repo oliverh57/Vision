@@ -135,7 +135,7 @@ echo <<<CAMERA
 							setTimeout(load_${cam}, 500);
 							function load_${cam}()
 							{
-									document.getElementById('view${cam}').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "${config['auth']}" + "&port=" + "${config['cam'.$cam.'_port']}" + "&server=" + "${config['cam'.$cam.'_ip']}";
+									document.getElementById('view${cam}').src = '/php/proxy/proxy-stream.php?auth=' + "${config['auth']}" + "&port=" + "${config['cam'.$cam.'_port']}" + "&server=" + "${config['cam'.$cam.'_ip']}";
 							}
 						</script>
 						<div class="w3-container">
