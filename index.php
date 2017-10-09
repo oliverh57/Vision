@@ -43,7 +43,7 @@
                                 <?php
                                 $config = include("setup/config.php");
                                 if ($config["use_recaptcha"] == "True") {
-                                    require_once "recaptchalib.php";
+                                    require_once "./lib/recaptchalib.php";
                                     echo '<br><div class="g-recaptcha" data-sitekey="' . $config["captcha_site_key"] . '"></div>';
                                 }
                                 ?>
