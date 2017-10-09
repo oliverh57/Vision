@@ -14,7 +14,7 @@ Add optional ReCaptcha verification to login page
 * You will need to install a web sever, with PHP installed. (PHP 5 or 7)
 * Clone the repository to your web directory using the command ``$ sh git clone https://github.com/oliverh57/Vision.git``.
 * Edit the file `\setup\config.php` with information about your cameras and decide on an encryption key and username / password.
-  * if you are using this programs built in suport for reCAPTCHA V2.0 follow the guide [here](https://www.google.com/recaptcha/intro/android.html) on how to genrate your own set of keys.
+  * If you are using this programs built in suport for reCAPTCHA V2.0 follow the guide [here](https://www.google.com/recaptcha/intro/android.html) on how to genrate your own set of keys.
 * your camera viewer should now be fully operational.
 
 
