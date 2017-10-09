@@ -88,7 +88,7 @@ CAMERA;
 							setTimeout(load_large${cam}, 500);
 							function load_large${cam}()
 							{
-									document.getElementById('view_large${cam}').src = 'https://remotehound.ddns.net/php/proxy/proxy-stream.php?auth=' + "${config['auth']}" + "&port=" + "${config['cam'.$cam.'_port']}" + "&server=" + "${config['cam'.$cam.'_ip']}";
+									document.getElementById('view_large${cam}').src = '/php/proxy/proxy-stream.php?auth=' + "${config['auth']}" + "&port=" + "${config['cam'.$cam.'_port']}" + "&server=" + "${config['cam'.$cam.'_ip']}";
 							}
 						</script>
 					</div>
