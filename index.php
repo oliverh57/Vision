@@ -22,7 +22,7 @@
 
 <body class="w3-light-grey">
 	<div class="w3-content" style="max-width:1400px">
-		<!-- Header -->
+		<!-- Header -->s
 		<header class="w3-container w3-center w3-padding-32">
 			<h1><b>Remote Camera</b></h1>
 			<p>Secure image <span class="w3-tag">viewer</span></p>
@@ -50,7 +50,7 @@
                                 <br><br>
 								<p>
 									<?php
-									$config = include("setup/config.php");https://remotehound.ddns.net/auth/
+									$config = include("setup/config.php");
                                         if (isset($_POST["username"]) && isset($_POST["password"])){
                                             if ($_POST["username"] == $config['username'] && $_POST["password"] == $config['password']){
                                                 if ($config["use_recaptcha"] == "True") {
