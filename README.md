@@ -17,6 +17,8 @@ Add optional ReCaptcha verification to login page as well as orgnisation.
   * If you are using this programs built in suport for reCAPTCHA V2.0 follow the guide [here](https://www.google.com/recaptcha/intro/android.html) on how to genrate your own set of keys.
 * your camera viewer should now be fully operational.
 
+### Important!
+For this site to be secure you **MUST** use `https`. If not, your credentials will be sent in plain text over the internet. For a guide on how to set up `https` for **free** on your webserver follow [this](https://certbot.eff.org/) link. 
 
 
 ### Side Note
