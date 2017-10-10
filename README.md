@@ -25,19 +25,19 @@ Add optional ReCaptcha verification to login page as well as orgnisation.
 
 ## change log
 
-### 1.2.2
+### 1.2.1
 Files tidied up.
 
-### 1.2.1
+### 1.2.0
 Add optional ReCaptcha verification to login page.
 
-### 1.1.1
+### 1.1.0
 Large Update to the way cameras are handled. The number of cameras can be dynamicly scaled.
 
-### 1.0.2
+### 1.0.1
 Bug fixes
 
-### 1.0.1
+### 1.0.0
 First Public release including many features such as:
   - Snapshot support
   - more simple install
