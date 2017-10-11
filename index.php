@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+    <?php
+    if (isset($_GET["signOut"])) { setcookie("auth", "Signed out", 1); }
+    ?>
+    
 <head>
 	<title>Remote Viewer</title>
 	<meta charset="UTF-8">
@@ -50,7 +54,7 @@
                                 <br><br>
 								<p>
 									<?php
-									$config = include("setup/config.php");https://remotehound.ddns.net/auth/
+									$config = include("setup/config.php");
                                         if (isset($_POST["username"]) && isset($_POST["password"])){
                                             if ($_POST["username"] == $config['username'] && $_POST["password"] == $config['password']){
                                                 if ($config["use_recaptcha"] == "True") {

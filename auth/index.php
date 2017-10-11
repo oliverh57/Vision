@@ -1,4 +1,15 @@
 <?php $cam = 1;
+
+function logout()
+{
+    setcookie("auth", "goAway", 1);
+    header('Location: ../?signOut=1');
+}
+
+if(array_key_exists('test',$_POST)){
+   logout();
+}
+
 $config = include(dirname(__DIR__, 1)."/setup/config.php");
 if ( ( isset($_COOKIE['auth']) ) && ( $_COOKIE['auth'] == $config['auth'] )){
 echo <<<CAMERA
@@ -164,6 +175,12 @@ echo <<<CAMERA
 		
 		</div> </div>
 		<!-- Footer -->
+        <center>
+        <form method="post">
+            <input type="submit" name="test" id="test" value="Sign Out" /><br/>
+        </form>
+
+        </center>
 		<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
 			<p>Made by <b>Oliver Hynds</b>, <b>Robert Bradshaw</b> and <b>Ben Griffiths</b></p>
 		</footer>
@@ -175,6 +192,9 @@ CAMERA;
 	
 
 } else {
-header("Location:". $config['site_url']);
+header("Location: ../");
 };
 ?>
+
+
+

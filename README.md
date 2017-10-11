@@ -27,6 +27,12 @@ For this site to be secure you **MUST** use `https`. If not, your credentials wi
 
 ## change log
 
+### 1.3.1
+Add sign out button to auth page
+
+### 1.2.2
+Delete unused files, generally tidy things up
+
 ### 1.2.1
 Files tidied up.
 
