@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+    <?php
+    if (isset($_GET["signOut"])) { setcookie("auth", "Signed out", 1); }
+    ?>
+    
 <head>
 	<title>Remote Viewer</title>
 	<meta charset="UTF-8">
@@ -22,7 +26,7 @@
 
 <body class="w3-light-grey">
 	<div class="w3-content" style="max-width:1400px">
-		<!-- Header -->s
+		<!-- Header -->
 		<header class="w3-container w3-center w3-padding-32">
 			<h1><b>Remote Camera</b></h1>
 			<p>Secure image <span class="w3-tag">viewer</span></p>
