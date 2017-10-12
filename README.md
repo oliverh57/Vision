@@ -27,14 +27,14 @@ For this site to be secure you **MUST** use `https`. If not, your credentials wi
 
 ## change log
 
-### 1.2.1
+### 2.1.1
 Files tidied up.
 
-### 1.2.0
+### 2.1.0
 Add optional ReCaptcha verification to login page.
 
-### 1.1.0
-Large Update to the way cameras are handled. The number of cameras can be dynamicly scaled.
+### 2.0.0
+Large Update to the way cameras are handled. The number of cameras can be dynamicly scaled (this version is no longer backwards compatable0.
 
 ### 1.0.1
 Bug fixes
