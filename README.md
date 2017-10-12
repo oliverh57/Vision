@@ -6,10 +6,10 @@ Vision is a front end for many common network cameras that enables you to:
   - encrypt their stream
   - take snapshots and view them all from the webclient
 
-### New features in 1.2.1
+## New features in 1.2.1
 Add optional ReCaptcha verification to login page as well as orgnisation.
  
-### Installation instructions
+## Installation instructions
 
 * You will need to install a web sever, with PHP installed. (PHP 5 or 7)
 * Clone the repository to your web directory using the command ``$ git clone https://github.com/oliverh57/Vision.git``.
@@ -17,11 +17,11 @@ Add optional ReCaptcha verification to login page as well as orgnisation.
   * If you are using this programs built in suport for reCAPTCHA V2.0 follow the guide [here](https://www.google.com/recaptcha/intro/android.html) on how to genrate your own set of keys.
 * your camera viewer should now be fully operational.
 
-### Important!
+## Important!
 For this site to be secure you **MUST** use `https`. If not, your credentials will be sent in plain text over the internet. For a guide on how to set up `https` for **free** on your webserver follow [this](https://certbot.eff.org/) link. 
 
 
-### Side Note
+## Side Note
 > This software is designed as a front end for cheap network cameras. For full operation with no modification it is advised that you use [MotionEye](https://github.com/ccrisan/motioneye). This code can easily be adapted however for operation with other cameras; see the guide on adapting this code [here](#)
 
 
@@ -44,5 +44,5 @@ First Public release including many features such as:
   - Snapshot support
   - more simple install
 
-### Attribution
+## Attribution
 This code had been developed by **Oliver Hynds**, **Robert Bradshaw** and **Ben Griffiths** - 09/10/2017
