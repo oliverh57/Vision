@@ -1,4 +1,4 @@
-# Vision
+# Vision [![Version][version-badge]][version-link] [![Build Status][travis-badge]][travis-link] [![Windows Build Status][appveyor-badge]][appveyor-link] [![Coverage][coverage-badge]][coverage-link] [![MIT License][license-badge]](LICENSE.md)
 #### A front end network camera viewer with snapshot support and built in reverse proxy.
 
 Vision is a front end for many common network cameras that enables you to: 
