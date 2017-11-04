@@ -22,7 +22,7 @@ For this site to be secure you **MUST** use `https`. If not, your credentials wi
 
 
 ## Side Note
-> This software is designed as a front end for cheap network cameras. For full operation with no modification it is advised that you use [MotionEye](https://github.com/ccrisan/motioneye). This code can easily be adapted however for operation with other cameras; see the guide on adapting this code [here](#)
+> This software is designed as a front end for cheap network cameras. For full operation with no modification it is advised that you use [MotionEye](https://github.com/ccrisan/motioneye). This code can easily be adapted however for operation with other cameras; see the guide on adapting this code [here](https://github.com/oliverh57/Vision/wiki/Adapting-this-code)
 
 
 ## change log
