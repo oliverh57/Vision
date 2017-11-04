@@ -11,30 +11,6 @@ echo <<<CAMERA
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="/lib/jquery-3.2.1.min.js"></script>
-<style>
-#cf2 {
-  position:relative;
-  height:281px;
-  width:450px;
-  margin:0 auto;
-}
-#cf2 img {
-  position:absolute;
-  left:0;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-}
-
-#cf2 img.transparent {
-opacity:0;
-}
-#cf_onclick {
-cursor:pointer;
-}
-</style>
-
 	<script>
 		function savecam(cam, server) {
 			$.get("/php/save.php?action=1&cam=" + cam + "&auth=" + "{$config['auth']}" + "&server=" + server);
